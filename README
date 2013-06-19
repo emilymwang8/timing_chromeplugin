@@ -1,0 +1,6 @@
+#这是一个chrome plugin for test the performace of http://touch.anjuke.com
+#使用方法如下：
+1. git clone git@git.corp.anjuke.com:mingyongwang/webtouch_chromeplugin
+2. 打开chrome 浏览器设置加载页为http://touch.anjuke.com,
+3. 拖动webtouch_chromeplugin.crx文件到浏览器里,然后就会看到监测结果。
+

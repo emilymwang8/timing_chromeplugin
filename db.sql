@@ -4,7 +4,7 @@
 -- ------------------------------------------------------
 -- Server version	5.5.29-0ubuntu0.12.04.2
 
- preunload,dns,connect,wait,req,resp,dom,loadEvent
+ preunload,dns,connecttime,wait,req,resp,dom,loadEvent
 -- Table structure for table `spidertable`
 --
 
@@ -12,11 +12,11 @@ DROP TABLE IF EXISTS `performancetest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `performancetest` (
-  `ip` int(10) unsigned NOT NULL,
-  `url` float(10,2) DEFAULT NULL,
+  `ip` int(10)  NOT NULL AUTO_INCREMENT,
+  `url` varchar(50) DEFAULT NULL,
   `preunload` float(10,2) DEFAULT NULL,
   `dns` float(10,2) DEFAULT NULL,
-  `connect` float(10,2) DEFAULT NULL,
+  `connecttime` float(10,2) DEFAULT NULL,
   `wait` float(10,2) DEFAULT NULL,
   `req` float(10,2) DEFAULT NULL,
   `resp` float(10,2) DEFAULT NULL,

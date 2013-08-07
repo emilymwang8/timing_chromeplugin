@@ -41,6 +41,53 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             startTimer();   
         })}, 5000);
     }
+	
+	
+	chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+	var request = false;
+    try {
+        request = new XMLHttpRequest();
+    } catch (trymicrosoft) {
+        try {
+            request = new ActiveXObject("Msxml2.XMLHTTP");
+			
+        } catch (othermicrosoft) {
+            try {
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (failed) {
+                request = false;
+            }
+        }
+    }
+    //发送xmlhttp请求的方法
+    
+   
+        var url = "http://localhost:8888?datas="+datas;
+        request.open("get", url, true);
+        request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        request.onreadystatechange = updatePage;
+        request.send();
+    
+   
+	 function updatePage() {
+        if (request.readyState == 4)
+            if (request.status == 200)
+                console.log("Server is done!");
+            else if (request.status == 404)
+                console.log("Request URL does not exist");
+            else
+                console.log("Error: status code is " + request.status);
+    	}
+
+		 console.log("ok.send xmlhttp request successfully...");
+		 
+
+   
+	});
+
+
+		
 });
+
 
 

@@ -65,7 +65,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     //发送xmlhttp请求的方法
     
    
-        var url = "http://localhost:8888?datas="+datas;
+        var url = "http://192.168.190.25:8888?datas="+datas;
         request.open("get", url, true);
         request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
         request.onreadystatechange = updatePage;
